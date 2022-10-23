@@ -12,7 +12,7 @@ all: main
 	main : intruso
 	$(CC) $(CFLAGS) build/intruso.o src/main.cpp -o $(TARGET)
 
-    g++ *.cpp -o main.out
+	g++ *.cpp -o main.out
 
 clean:
     rm main.out
