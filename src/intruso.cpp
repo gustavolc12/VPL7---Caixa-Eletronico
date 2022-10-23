@@ -23,7 +23,7 @@ std::string Intruso::crack_senha(){
     for(int i=0; i<6; i++){
         bool verifica = true;
         for(int j=0; j<armazenamento.size()-1; j++){
-            if(senha[1][i].first == senha[j+1][i].first || senha[j][i].first == senha[j+1][i].second){
+            if(senha[0][i].first == senha[j+1][i].first || senha[0][i].first == senha[j+1][i].second){
                 
             }
             else{
@@ -32,13 +32,14 @@ std::string Intruso::crack_senha(){
             }
         }
         if(verifica){
-            retorno+=senha[1][i].first;
+            retorno+=senha[0][i].first;
             // std::cout<<senha[1][i].first<<std::endl;
         }else{
-            retorno+=senha[1][i].second;
+            retorno+=senha[0][i].second;
             // std::cout<<senha[1][i].second<<std::endl;
         }
         // retorno+=resultado[i]+" ";
+        retorno+=" ";
     }
     return retorno;
 }
