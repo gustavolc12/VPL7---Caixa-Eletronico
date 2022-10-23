@@ -17,7 +17,7 @@ std::string Intruso::crack_senha(){
     for(int i=0; i<armazenamento.size(); i++){
         for(int j=0; j<6; j++){
             senha[i][j]= this->armazenamento[i].first[(this->armazenamento[i]).second[j]];
-            std::cout<<(senha[1][i]).first<<(senha[1][i]).second<<std::endl;
+            // std::cout<<(senha[1][i]).first<<(senha[1][i]).second<<std::endl;
         }
     }
     for(int i=0; i<6; i++){
@@ -33,12 +33,12 @@ std::string Intruso::crack_senha(){
         }
         if(verifica){
             retorno+=senha[1][i].first;
-            std::cout<<senha[1][i].first<<std::endl;
+            // std::cout<<senha[1][i].first<<std::endl;
         }else{
             retorno+=senha[1][i].second;
-            std::cout<<senha[1][i].second<<std::endl;
+            // std::cout<<senha[1][i].second<<std::endl;
         }
-        retorno+=resultado[i]+' ';
+        // retorno+=resultado[i]+" ";
     }
     return retorno;
 }
