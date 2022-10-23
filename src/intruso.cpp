@@ -15,7 +15,7 @@ std::string Intruso::crack_senha(){
     std::vector<std::vector<std::pair<int, int>>> senha;
     for(int i=0; i<armazenamento.size(); i++){
     for(int j=0; j<6; j++){
-    senha
+    senha[i][j]=armazenamento.first();
 
     }
     }
