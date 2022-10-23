@@ -1,18 +1,14 @@
 CC := g++
-SRCDIR := src
-BUILDDIR := build
+FLAGS := -I includes/ -Wall
+BUILD := build/
+SRC := src/
 TARGET := main.out
-CFLAGS := -g -Wall -O3 -std=c++11 -I includes/
 
-all: main
-
+all: main 
 intruso: 
-	$(CC) $(CFLAGS) -c src/intruso.cpp -o build/intruso.o	
-	
-main : intruso
-	$(CC) $(CFLAGS) build/intruso.o src/main.cpp -o $(TARGET)
+    $(CC) $(CFLAGS) -c $(SRC)intruso.cpp -o $(BUILD)intruso.o
 
-	g++ *.cpp -o main.out
-
-clean:
-	rm main.out
+main: intruso
+    $(CC) $(CFLAGS) $(BUILD)intruso.o $(SRC)main.cpp -o $(TARGET)
+clean: 
+    $(RM) -r $(BUILD)* $(TARGET)
