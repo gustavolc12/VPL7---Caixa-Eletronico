@@ -1,5 +1,5 @@
 CC := g++
-FLAGS := -I includes/ -Wall
+CFLAGS := -I -g includes/ -Wall
 BUILD := build/
 SRC := src/
 TARGET := main.out
