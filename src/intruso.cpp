@@ -14,9 +14,9 @@ void Intruso::set_senha_vazada(std::string vazou){
 std::string Intruso::crack_senha(){
     std::vector<std::vector<std::pair<int, int>>> senha;
     for(int i=0; i<armazenamento.size(); i++){
-    for(int j=0; j<6; j++){
-    senha[i][j]=armazenamento.first();
-
+        for(int j=0; j<6; j++){
+            senha[i][j]= (armazenamento[i]).first[(armazenamento[i]).second[j]];
+        }
     }
-    }
+    
 }
