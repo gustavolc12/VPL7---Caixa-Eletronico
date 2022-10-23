@@ -12,3 +12,4 @@ main: intruso
     $(CC) $(CFLAGS) $(BUILD)intruso.o $(SRC)main.cpp -o $(TARGET)
 clean: 
     $(RM) -r $(BUILD)* $(TARGET)
+	
