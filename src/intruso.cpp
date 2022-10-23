@@ -11,3 +11,10 @@ void Intruso::set_senha_vazada(std::string vazou){
     armazenamento.push_back(std::pair<std::map<char, std::pair<int, int>>, std::vector<char>>(codigo, senha));
     
 }
+std::string Intruso::crack_senha(){
+    for(int j=0; j<6; j++){
+    for(int i=0; i<armazenamento.size(); i++){
+        
+    }
+    }
+}
