@@ -5,8 +5,8 @@ void Intruso::set_senha_vazada(std::string vazou){
     for(int i=0;i<5;i++){
         codigo[char('A'+i)] = std::pair<char, char> (vazou[4*i],vazou[4*i+2]);
     }
-    for(int i=5;i<11;i++){
-        senha.push_back(vazou[4*i]);
+    for(int i=10;i<16;i++){
+        senha.push_back(vazou[2*i]);
     }
     armazenamento.push_back(std::pair<std::map<char, std::pair<char, char>>, std::vector<char>>(codigo, senha));
     
@@ -18,8 +18,9 @@ std::string Intruso::crack_senha(){
     for(int i=0; i<armazenamento.size(); i++){
         for(int j=0; j<6; j++){
             senha[i][j]= this->armazenamento[i].first[(this->armazenamento[i]).second[j]];
+            std::cout<<(senha[1][i]).first<<(senha[1][i]).second<<std::endl;
         }
-    }std::cout<<"Saiu Transfeiru para o vetor"<<std::endl;
+    }
     for(int i=0; i<6; i++){
         bool verifica = true;
         for(int j=0; j<armazenamento.size()-1; j++){
@@ -32,9 +33,11 @@ std::string Intruso::crack_senha(){
             }
         }
         if(verifica){
-            resultado[i]=senha[1][i].first;
+            retorno+=senha[1][i].first;
+            std::cout<<senha[1][i].first<<std::endl;
         }else{
-            resultado[i]=senha[1][i].second;
+            retorno+=senha[1][i].second;
+            std::cout<<senha[1][i].second<<std::endl;
         }
         retorno+=resultado[i]+' ';
     }
